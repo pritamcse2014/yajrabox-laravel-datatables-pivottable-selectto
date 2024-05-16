@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\DataTables\CustomersDataTable;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -10,9 +11,9 @@ class CustomerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(CustomersDataTable $dataTable)
     {
-        //
+        return $dataTable->render('customers.index');
     }
 
     /**
